@@ -36,10 +36,10 @@ Virtual machines likely do not work, because USB 3.0 isochronous transfer is qui
 
 ## Maintainers
 
-* Joshua Blake <joshblake@gmail.com>
-* Florian Echtler
-* Christian Kerl
-* Lingzhu Xiang (development/master branch)
+* Carlos Rodriguez (Director/master branch)
+* Ruben Corrales (Audio Synthesis Scientist)
+* Jorge Corrales (Musicology)
+* Carlos Ferrin (MIR expert/Development/master branch)
 
 ## Installation
 
