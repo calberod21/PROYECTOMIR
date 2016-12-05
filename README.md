@@ -39,7 +39,7 @@ If you are using PROECTOMIR UNIAJC in an academic context, please cite our work.
 
 ## Maintainers
 
-* Carlos Rodriguez (Director/master branch)
+* Carlos Rodriguez (Lead/master branch)
 * Ruben Corrales (Audio Synthesis Scientist)
 * Jorge Corrales (Musicology)
 * Carlos Ferrin (MIR expert/Development/master branch)
@@ -48,11 +48,7 @@ If you are using PROECTOMIR UNIAJC in an academic context, please cite our work.
 
 ### Windows
 
-* Install UsbDk driver
-
-    1. (Windows 7) You must first install Microsoft Security Advisory 3033929 otherwise your USB keyboards and mice will stop working!
-    2. Download the latest x64 installer from https://github.com/daynix/UsbDk/releases, install it.
-    3. If UsbDk somehow does not work, uninstall UsbDk and follow the libusbK instructions.
+You may directly git clone this project, or download and unzip it using the http tools avalaible.
 
 ## Credits
 
