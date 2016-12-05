@@ -4,17 +4,12 @@
 
 * [Description](README.md#description)
 * [Requirements](README.md#requirements)
-* [Troubleshooting](README.md#troubleshooting-and-reporting-bugs)
-* [Maintainers](README.md#maintainers)
 * [Installation](README.md#installation)
-  * [Windows / Visual Studio](README.md#windows--visual-studio)
-  * [MacOS X](README.md#mac-osx)
-  * [Linux](README.md#linux)
-* [API Documentation (external)](https://openkinect.github.io/libfreenect2/)
+* [Maintainers](README.md#maintainers)
 
 ## Description
 
-Driver for Kinect for Windows v2 (K4W2) devices (release and developer preview).
+A set of tools to analyze and visualize Music Information Retrieval algorithms over Pop-Music Audio signals.
 
 Note: libfreenect2 does not do anything for either Kinect for Windows v1 or Kinect for Xbox 360 sensors. Use libfreenect1 for those sensors.
 
@@ -44,31 +39,6 @@ Intel and NEC USB 3.0 host controllers are known to work. ASMedia controllers ar
 
 Virtual machines likely do not work, because USB 3.0 isochronous transfer is quite delicate.
 
-##### Requirements for multiple Kinects
-
-It has been reported to work for up to 5 devices on a high-end PC using multiple separate PCI Express USB3 expansion cards (with NEC controller chip). If you're using Linux, you may have to [increase USBFS memory buffers](https://github.com/OpenKinect/libfreenect2/wiki/Troubleshooting#multiple-kinects-try-increasing-usbfs-buffer-size). Depending on the number of Kinects, you may need to use an even larger buffer size. If you're using an expansion card, make sure it's not plugged into an PCI-E x1 slot. A single lane doesn't have enough bandwidth. x8 or x16 slots usually work.
-
-### Operating system requirements
-
-* Windows 7 (buggy), Windows 8, Windows 8.1, and probably Windows 10
-* Debian, Ubuntu 14.04 or newer, probably other Linux distros. Recommend kernel 3.16+ or as new as possible.
-* Mac OS X
-
-### Requirements for optional features
-
-* OpenGL depth processing: OpenGL 3.1 (Windows, Linux, Mac OS X). OpenGL ES is not supported at the moment.
-* OpenCL depth processing: OpenCL 1.1
-* CUDA depth processing: CUDA (6.5 and 7.5 are tested; The minimum version is not clear.)
-* VAAPI JPEG decoding: Intel (minimum Ivy Bridge or newer) and Linux only
-* VideoToolbox JPEG decoding: Mac OS X only
-* OpenNI2 integration: OpenNI2 2.2.0.33
-* Jetson TK1: Linux4Tegra 21.3 or later. Check [Jetson TK1 issues](https://github.com/OpenKinect/libfreenect2/wiki/Troubleshooting#jetson-tk1-issues) before installation. Jetson TX1 is not yet supported as the developers don't have one, but it may be easy to add the support.
-
-## Troubleshooting and reporting bugs
-
-First, check https://github.com/OpenKinect/libfreenect2/wiki/Troubleshooting for known issues.
-
-When you report USB issues, please attach relevant debug log from running the program with environment variable `LIBUSB_DEBUG=3`, and relevant log from `dmesg`. Also include relevant hardware information `lspci` and `lsusb -t`.
 
 ## Maintainers
 
@@ -79,7 +49,7 @@ When you report USB issues, please attach relevant debug log from running the pr
 
 ## Installation
 
-### Windows / Visual Studio
+### Windows
 
 * Install UsbDk driver
 
@@ -184,52 +154,6 @@ export OPENNI2_INCLUDE=/usr/local/include/ni2
 ```
 * Build
 
-    ```
-mkdir build && cd build
-cmake ..
-make
-make install
-```
-* Run the test program: `./bin/Protonect`
-* Test OpenNI2. `make install-openni2` (may need sudo), then run `NiViewer`. Environment variable `LIBFREENECT2_PIPELINE` can be set to `cl`, `cuda`, etc to specify the pipeline.
-
-### Linux
-
-Note: Ubuntu 12.04 is too old to support. Debian jessie may also be too old, and Debian stretch is implied in the following.
-
-* Download libfreenect2 source
-
-    ```
-git clone https://github.com/OpenKinect/libfreenect2.git
-cd libfreenect2
-```
-* (Ubuntu 14.04 only) Download upgrade deb files
-
-    ```
-cd depends; ./download_debs_trusty.sh
-```
-* Install build tools
-
-    ```
-sudo apt-get install build-essential cmake pkg-config
-```
-* Install libusb. The version must be >= 1.0.20.
-    1. (Ubuntu 14.04 only) `sudo dpkg -i debs/libusb*deb`
-    2. (Other) `sudo apt-get install libusb-1.0-0-dev`
-* Install TurboJPEG
-    1. (Ubuntu 14.04 and newer) `sudo apt-get install libturbojpeg libjpeg-turbo8-dev`
-    2. (Debian) `sudo apt-get install libturbojpeg0-dev`
-* Install OpenGL
-    1. (Ubuntu 14.04 only) `sudo dpkg -i debs/libglfw3*deb; sudo apt-get install -f; sudo apt-get install libgl1-mesa-dri-lts-vivid` (If the last command conflicts with other packages, don't do it.)
-    2. (Odroid XU4) OpenGL 3.1 is not supported on this platform. Use `cmake -DENABLE_OPENGL=OFF` later.
-    3. (Other) `sudo apt-get install libglfw3-dev`
-* Install OpenCL (optional)
-    - Intel GPU
-        1. (Ubuntu 14.04 only) `sudo apt-add-repository ppa:floe/beignet; sudo apt-get update; sudo apt-get install beignet-dev; sudo dpkg -i debs/ocl-icd*deb`
-        2. (Other) `sudo apt-get install beignet-dev`
-        3. For older kernels, `# echo 0 >/sys/module/i915/parameters/enable_cmd_parser` is needed. See more known issues at https://www.freedesktop.org/wiki/Software/Beignet/.
-    - AMD GPU: Install the latest version of the AMD Catalyst drivers from https://support.amd.com and `apt-get install opencl-headers`.
-    - Mali GPU (e.g. Odroid XU4): (with root) `mkdir -p /etc/OpenCL/vendors; echo /usr/lib/arm-linux-gnueabihf/mali-egl/libmali.so >/etc/OpenCL/vendors/mali.icd; apt-get install opencl-headers`.
     - Verify: You can install `clinfo` to verify if you have correctly set up the OpenCL stack.
 * Install CUDA (optional, Nvidia only):
     - (Ubuntu 14.04 only) Download `cuda-repo-ubuntu1404...*.deb` ("deb (network)") from Nvidia website, follow their installation instructions, including `apt-get install cuda` which installs Nvidia graphics driver.
