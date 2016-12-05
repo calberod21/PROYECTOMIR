@@ -100,8 +100,10 @@ function botonBeatTracking_Callback(hObject, eventdata, handles)
 % hObject    handle to botonBeatTracking (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
+clc;
+addpath(genpath('GUI_BEATTRACKING'));
+Comando = 'GUI_BEATTRACKING';
+eval(Comando);
 % --- Executes on button press in botonMelodico.
 function botonMelodico_Callback(hObject, eventdata, handles)
 % hObject    handle to botonMelodico (see GCBO)
