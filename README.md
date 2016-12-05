@@ -1,4 +1,4 @@
-# libfreenect2
+# PROYECTOMIR UNIAJC
 
 ## Table of Contents
 
