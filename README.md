@@ -20,7 +20,7 @@ This Source is organized as follows:
 
 3) Resource folder contains icons and images for all the GUI's.
 
-4) MIRLib folder has basic functions for MIR algorithm implementations. General [Audio Content Analysis] (http://www.audiocontentanalysis.org/), [Chroma Calculations] (http://www.ee.columbia.edu/ln/rosa/matlab/chroma-ansyn/) and [Beat tracking] (http://labrosa.ee.columbia.edu/projects/coversongs/) libraries has been downloaded and adapted for this project. 
+4) MIRLib folder has basic functions for MIR algorithm implementations. General [Audio Content Analysis] (http://www.audiocontentanalysis.org/), [Chroma Calculations] (http://www.ee.columbia.edu/ln/rosa/matlab/chroma-ansyn/) and [Beat tracking] (http://labrosa.ee.columbia.edu/projects/coversongs/) libraries have been downloaded and adapted for this project. 
 
 If you are using PROYECTOMIR UNIAJC in an academic context, please cite our work. 
 
