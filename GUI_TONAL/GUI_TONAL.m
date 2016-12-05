@@ -68,7 +68,10 @@ overlap=str2double(get(handles.editLongitudSolape, 'String'));
 
 axes(handles.EjeSpectrograma);
 NFFT = 1024;
-spectrogram(x,cfftlen,overlap,NFFT,Fs,'yaxis'); xlabel('Tiempo (s)'); ylabel('Frecuencia (Hz)');
+spectrogram(x,cfftlen,overlap,NFFT,Fs,'yaxis'); xlabel('Tiempo (s)'); ylabel('Frecuencia (kHz)'); 
+title('Espectrograma')
+h = colorbar;
+h.Label.String = 'dB/Hz';
 
 C = chromagram_IF(x, Fs, cfftlen);
 tt = [1:size(C,2)]*cfftlen/4/Fs;
@@ -77,6 +80,8 @@ imagesc(tt,[1:12],20*log10(C+eps));
 axis xy;
 caxis(max(caxis)+[-60 0]);
 title('Cromagrama');
+xlabel('Tiempo (s)');
+ylabel('Nota');
 
 % [cKey] = ComputeKey (x, Fs, [], cfftlen, overlap);
 % set(handles.textoResultado, 'String', cKey);
@@ -135,7 +140,7 @@ else
     
     axes(handles.EjeSenal);
    
-    plot(t, signal);
+    plot(t, signal);xlabel('Tiempo (s)'); ylabel('Amp. Normalizada'); title('Señal de Audio');
     
     
     %axes(handles.EjeSpectrograma);
@@ -154,7 +159,13 @@ function botonGuardar_Callback(hObject, eventdata, handles)
 % hObject    handle to botonGuardar (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+[filename, pathname] = uiputfile('*.txt', 'Guardar Archivo TXT');
+if isequal(filename,0) || isequal(pathname,0)
+    uiwait(msgbox('No se guardó el archivo.','Advertencia','modal'));
+else
+    Cromagrama = handles.Cromagrama;
+    dlmwrite(fullfile(pathname, filename),Cromagrama,'delimiter','\t','precision',6);
+end
 
 % --- Executes on button press in botonHelp.
 function botonHelp_Callback(hObject, eventdata, handles)
@@ -180,7 +191,10 @@ overlap=str2double(get(handles.editLongitudSolape, 'String'));
 
 axes(handles.EjeSpectrograma);
 NFFT = 1024;
-spectrogram(handles.Senal,cfftlen,overlap,NFFT,handles.FS,'yaxis'); xlabel('Tiempo (s)'); ylabel('Frecuencia (Hz)');
+spectrogram(handles.Senal,cfftlen,overlap,NFFT,handles.FS,'yaxis'); xlabel('Tiempo (s)'); ylabel('Frecuencia (kHz)');
+title('Espectrograma')
+h = colorbar;
+h.Label.String = 'dB/Hz';
 
 C = chromagram_IF(handles.Senal, handles.FS, cfftlen);
 tt = [1:size(C,2)]*cfftlen/4/handles.FS;
@@ -189,10 +203,14 @@ imagesc(tt,[1:12],20*log10(C+eps));
 axis xy;
 caxis(max(caxis)+[-60 0]);
 title('Cromagrama');
+xlabel('Tiempo (s)');
+ylabel('Nota');
 
 [cKey] = ComputeKey (handles.Senal, handles.FS, []);
 set(handles.textoResultado, 'String', cKey);
 
+handles.Cromagrama = C;
+guidata(hObject, handles);
 
 % --- Executes during object creation, after setting all properties.
 function botonHelp_CreateFcn(hObject, eventdata, handles)

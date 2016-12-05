@@ -247,11 +247,8 @@ if isequal(filename,0) || isequal(pathname,0)
 else
     beats = handles.Beats;
     A = [beats*handles.FS, beats];
-    fileID = fopen(fullfile(pathname, filename),'w');
-    for i=1:length(beats)
-        fprintf(fileID,'%d %.4f\r\n',A(i,1), A(i,2));
-    end
-    fclose(fileID);
+    dlmwrite(fullfile(pathname, filename), A,'delimiter','\t','precision',6);
+
 end
 
 
