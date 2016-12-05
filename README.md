@@ -21,21 +21,7 @@ This Source is organized as follows:
 
 4) MIRLib folder has basic functions for MIR algorithm implementations. General [Audio Content Analysis] (http://www.audiocontentanalysis.org/), [Chroma Calculations] (http://www.ee.columbia.edu/ln/rosa/matlab/chroma-ansyn/) and [Beat tracking] (http://labrosa.ee.columbia.edu/projects/coversongs/) libraries has been downloaded and adapted for this project. 
 
-If you are using libfreenect2 in an academic context, please cite our work using the following DOI: [![DOI](https://zenodo.org/badge/20096/OpenKinect/libfreenect2.svg)](https://zenodo.org/badge/latestdoi/20096/OpenKinect/libfreenect2)
-
-If you use the KDE depth unwrapping algorithm implemented in the library, please also cite this ECCV 2016 [paper](http://users.isy.liu.se/cvl/perfo/abstracts/jaremo16.html).
-
-This driver supports:
-* RGB image transfer
-* IR and depth image transfer
-* registration of RGB and depth images
-
-Missing features:
-* firmware updates (see [issue #460](https://github.com/OpenKinect/libfreenect2/issues/460) for WiP)
-
-Watch the OpenKinect wiki at www.openkinect.org and the mailing list at https://groups.google.com/forum/#!forum/openkinect for the latest developments and more information about the K4W2 USB protocol.
-
-The API reference documentation is provided here https://openkinect.github.io/libfreenect2/.
+If you are using PROECTOMIR UNIAJC in an academic context, please cite our work. 
 
 ## Requirements
 
