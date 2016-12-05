@@ -49,10 +49,11 @@ SOFTWARE
 
 ## Installation
 
-### Windows
+  ```
+Windows
 
 You may directly git clone this project, or download and unzip it using the http tools avalaible.
-
+```
 ## Credits
 
 This project has been supported by the Colombian Goverement Bureau for Science, COLCIENCIAS. 
