@@ -16,7 +16,7 @@ This Source is organized as follows:
 1) The principal Graphic user interface (GUI), GUI_UNIAJC_MIR.m/fig, has four buttons addressing to four MIR modules: Tonal, Beat Tracking, Chord Recognition, and Melody Recognition. 
 2) Each module resides in its own folder, however resources are shared from the same folders such as Resources folder and MIRLib folder.
 3) Resource folder contains icons and images for all the GUI's.
-4) MIRLib folder has basic functions for MIR algorithm implementations. Generla Audio Content Analysis (DOI: [![DOI](http://www.audiocontentanalysis.org/)), Chroma Calculations and Beat tracking has been compiled from differents place on the web.
+4) MIRLib folder has basic functions for MIR algorithm implementations. Generla [Audio Content Analysis] (http://www.audiocontentanalysis.org/), Chroma Calculations and Beat tracking has been compiled from differents place on the web.
 
 If you are using libfreenect2 in an academic context, please cite our work using the following DOI: [![DOI](https://zenodo.org/badge/20096/OpenKinect/libfreenect2.svg)](https://zenodo.org/badge/latestdoi/20096/OpenKinect/libfreenect2)
 
