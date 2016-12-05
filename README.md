@@ -52,7 +52,7 @@ SOFTWARE
   ```
 WINDOWS:
 
-You may directly git clone this project, or download and unzip it using the http tools avalaible.
+You may directly git clone this project, or download and unzip it using the http tools avalaible in this web page.
 ```
 ## Credits
 
