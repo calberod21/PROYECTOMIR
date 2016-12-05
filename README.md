@@ -132,7 +132,7 @@ cd libfreenect2
 ```
 * Install dependencies: libusb, GLFW
 
-    ```
+```
 brew update
 brew install libusb
 brew tap homebrew/versions
