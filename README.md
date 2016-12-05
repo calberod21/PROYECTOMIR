@@ -50,7 +50,7 @@ SOFTWARE
 ## Installation
 
   ```
-Windows
+WINDOWS:
 
 You may directly git clone this project, or download and unzip it using the http tools avalaible.
 ```
