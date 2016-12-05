@@ -28,12 +28,14 @@ If you are using PROECTOMIR UNIAJC in an academic context, please cite our work.
 
 ### Hardware requirements
 
-PC with 4 GB RAM and Intel Core i5 Processor or later. 
+* PC with 4 GB RAM (or higher). 
+* Intel Core i5 Processor or later. 
+* 5 GB of free disk space.
 
 ### Software requirements
 
-Windows 10
-Matlab 2012b or later.
+* Windows 8 or later.
+* Matlab 2012b or later.
 
 ## Maintainers
 
