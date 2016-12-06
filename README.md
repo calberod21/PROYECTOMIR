@@ -14,7 +14,7 @@ A set of tools to analyze and visualize Music Information Retrieval algorithms o
 
 This Source is organized as follows:
 
-1) The principal Graphic user interface (GUI), GUI_UNIAJC_MIR.m/fig, has four buttons addressing to four MIR modules: Tonal, Beat Tracking, Chord Recognition, and Melody Recognition. 
+1) The principal Graphic user interface ( GUI), GUI_UNIAJC_MIR.m/fig, has four buttons addressing to four MIR modules: Tonal, Beat Tracking, Chord Recognition, and Melody Recognition. 
 
 2) Each module resides in its own folder, however resources are shared from the same folders such as Resources folder and MIRLib folder.
 
