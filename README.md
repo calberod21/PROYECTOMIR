@@ -56,4 +56,4 @@ You may directly git clone this project, or download and unzip it using the http
 ```
 ## Credits
 
-This project has been supported by the Colombian Government Bureau for Science, COLCIENCIAS. 
+This project has been supported by the Colombian Government Bureau for Science, COLCIENCIAS, and by Intitución Universitaria Antonio José Camacho.
