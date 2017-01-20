@@ -44,7 +44,7 @@ SOFTWARE
 
 * Carlos Rodriguez (Lead/master branch): <crodriguez@admon.uniajc.edu.co>
 * Ruben Corrales (Audio Synthesis Scientist)
-* Jorge Corrales (Musicology)
+* Jorge Corrales (Musician)
 * Carlos Ferrin (MIR expert/Development/master branch)
 
 ## Installation
